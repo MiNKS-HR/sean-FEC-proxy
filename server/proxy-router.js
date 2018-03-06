@@ -4,12 +4,12 @@ const axios = require('axios');
 const _ = require('lodash');
 
 
-const proxyRedirect = (ip, url, port) => {
+const proxyRedirect = (ip, url, port, secure) => {
 
   return (req, res) => {
     let axiosRequest;
 
-    console.log('req.type', req.method);
+    //console.log('req.type', req.method);
 
     if (req.method === 'GET') {
       axiosRequest = axios.get;
@@ -20,10 +20,11 @@ const proxyRedirect = (ip, url, port) => {
       return
     }
 
-    console.log('sending request to ', ip + ':' + port + req.url);
-    console.log('req.params', req.body);
+    console.log('routing', req.method, 'request to ', ip + ':' + port + req.url);
+    //console.log('req.params', req.body);
 
-    axiosRequest('http://' + ip + ':' + port + req.url, req.body)
+    let http = secure ? 'https://' : 'http://';
+    axiosRequest(http + ip + ':' + port + req.url, req.body)
     .then((response) => {
       console.log(response);
       res.end(response.data);
@@ -51,8 +52,3 @@ const proxyRouter = (redirects) => {
 
 module.exports.Redirect = proxyRedirect;
 module.exports.Router = proxyRouter;
-
-module.exports.doStuff = (req, res) => {
-  console.log('test request')
-  axios.get('127.0.0.1:3001/1/reviews', {}).then((res) => {console.log(res);});
-}
