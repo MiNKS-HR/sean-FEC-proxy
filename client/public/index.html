@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Proxy Server index</title>
+	<title>Proxy Server For AirBnB</title>
 </head>
 <body>
+
+  <!-- FOR work in progress with microservices, not just placeholders, see: https://github.com/MiNKS-HR/sean-FEC-proxy/blob/addMicroservices/client/public/index.html -->
+
+  <div id="photoGallery">
+  	[photo Gallery]
+  </div>
+
+  <div id="details">
+  	[details]
+  </div>
+
   <div id="itemreviews"></div>
-  <script src="/content/bundle.js"></script>
+  <script src="/reviewsContent/bundle.js"></script>
   <script>
   	ReactDOM.render(
   		React.createElement(Reviews),
   		document.getElementById('itemreviews')
   		);
   </script>
+
+  <div id="upcomingAvailability">
+  	[upcoming Availability]
+  </div>
+
+  <div id="similarExperiences">
+  	[similar experiences]
+  </div>
+
 </body>
 </html>
