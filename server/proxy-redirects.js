@@ -8,7 +8,7 @@ const redirects = {
       redirectPort: '3001'
     },
     reviewsPublic: {
-      url: '/reviewsContent/*',
+      url: '/reviews/content/*',
       redirectIP: '127.0.0.1',
       redirectPort: '3001'
     },
@@ -41,11 +41,11 @@ const redirects = {
       url: '/app.js',
       redirectIP: '127.0.0.1',
       redirectPort: '3004'
-    }
+    },
     details: {
       url: 'experience/details',
       redirectIP: '127.0.0.1',
-      redirectPort: '3005';
+      redirectPort: '3005'
     }
   }
 
