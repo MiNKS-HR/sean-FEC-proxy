@@ -1,0 +1,32 @@
+{
+  "name": "sean-fec-proxy",
+  "version": "1.0.0",
+  "description": "proxy server for AirEnE experiences page",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "server-dev": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiNKS-HR/sean-FEC-proxy.git"
+  },
+  "author": "Sean Lang-Brown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MiNKS-HR/sean-FEC-proxy/issues"
+  },
+  "homepage": "https://github.com/MiNKS-HR/sean-FEC-proxy#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-router": "0.0.1",
+    "jest": "^22.4.2",
+    "lodash": "^4.17.5",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  }
+}
