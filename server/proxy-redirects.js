@@ -3,12 +3,12 @@
 
 const redirects = {
     reviews: {
-      url: '/*/reviews',
+      url: '/reviews/*/',
       redirectIP: '127.0.0.1',
       redirectPort: 3001
     },
     reviewsPublic: {
-      url: '/content/*',
+      url: '/reviewsContent/*',
       redirectIP: '127.0.0.1',
       redirectPort: 3001
     },
