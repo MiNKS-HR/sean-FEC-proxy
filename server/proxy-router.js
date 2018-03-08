@@ -26,10 +26,12 @@ const proxyRedirect = (ip, url, port, secure) => {
     let http = secure ? 'https://' : 'http://';
     axiosRequest(http + ip + ':' + port + req.url, req.body)
     .then((response) => {
-      console.log(response.data);
+      //console.log(response.data);
       if (typeof response.data === 'object') {
+        console.log('relaying data as json');
         res.json(response.data);
       } else {
+        console.log('relaying data');
         res.end(response.data);
       }
     })
