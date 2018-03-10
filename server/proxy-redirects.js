@@ -8,22 +8,22 @@ const redirects = {
       redirectPort: '3001'
     },
     reviewsPublic: {
-      url: '/reviewsContent/*',
+      url: '/reviews/content/*',
       redirectIP: '127.0.0.1',
       redirectPort: '3001'
     },
-    similarExperiences: {
-      url: '/experience/similar/*',
+    similarExperiencesLocation: {
+      url: '/similar/location/*',
       redirectIP: '127.0.0.1',
       redirectPort: '3003'
     },
     similarExperiencesIndex: {
-      url: '/id/*',
+      url: '/similar/id/*',
       redirectIP: '127.0.0.1',
       redirectPort: '3003'
     },
-    similarExperiencesLocation: {
-      url: '/experience/similar/location/*',
+    similarExperiencesContent: {
+      url: '/similar/content/*',
       redirectIP: '127.0.0.1',
       redirectPort: '3003'
     },
@@ -37,15 +37,15 @@ const redirects = {
       redirectIP: '127.0.0.1',
       redirectPort: '3004'
     },
-    photoGalleryApp: {
-      url: '/app.js',
+    detailsBundle: {
+      url: '/details/content/*',
       redirectIP: '127.0.0.1',
-      redirectPort: '3004'
-    }
+      redirectPort: '3005'
+    },
     details: {
-      url: 'experience/details',
+      url: '/details/*',
       redirectIP: '127.0.0.1',
-      redirectPort: '3005';
+      redirectPort: '3005'
     }
   }
 
