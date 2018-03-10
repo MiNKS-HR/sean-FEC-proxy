@@ -4,12 +4,12 @@
 const redirects = {
     reviews: {
       url: '/reviews/*/',
-      redirectIP: 'http://54.153.115.227/',
+      redirectIP: '54.153.115.227',
       redirectPort: null
     },
     reviewsPublic: {
       url: '/reviews/content/*',
-      redirectIP: 'http://54.153.115.227/',
+      redirectIP: '54.153.115.227',
       redirectPort: null
     },
     // similarExperiencesLocation: {
