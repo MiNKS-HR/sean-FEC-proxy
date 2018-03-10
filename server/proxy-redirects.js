@@ -12,22 +12,21 @@ const redirects = {
       redirectIP: '54.153.115.227',
       redirectPort: null
     },
-    // similarExperiencesLocation: {
-    //   url: '/similarExperience/location/*',
-    //   redirectIP: '13.56.28.204',
-    //   redirectPort: null
-    // },
-    // similarExperiencesIndex: {
-    //   url: '/similarExperience/id/*',
-    //   redirectIP: '13.56.28.204',
-    //   redirectPort: null
-    // },
-    // similarExperiencesContent: {
-    //   url: '/similarExperience/content/*',
-    //   redirectIP: '13.56.28.204',
-    //   redirectPort: null
-    // },
-
+    similarExperiencesLocation: {
+      url: '/similar/location/*',
+      redirectIP: '54.241.103.135',
+      redirectPort: null
+    },
+    similarExperiencesIndex: {
+      url: '/similar/id/*',
+      redirectIP: '54.241.103.135',
+      redirectPort: null
+    },
+    similarExperiencesContent: {
+      url: '/similar/content/*',
+      redirectIP: '54.241.103.135',
+      redirectPort: null
+    },
     upcomingAvailabilityContent: {
       url: '/availability/content/*',
       redirectIP: '52.9.177.164',
