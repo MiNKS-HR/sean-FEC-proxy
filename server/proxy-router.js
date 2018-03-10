@@ -1,10 +1,11 @@
 const express = require('express');
 const router = require('express-router'); 
 const axios = require('axios');
+const request = require('request');
 const _ = require('lodash');
 
 
-const proxyReroute = (ip, url, port, secure) => {
+const proxyAxiosReroute = (ip, url, port, secure) => {
 
   return (req, res) => {
     let axiosRequest;
@@ -20,7 +21,7 @@ const proxyReroute = (ip, url, port, secure) => {
       return
     }
 
-    console.log('routing', req.method, 'request to ', ip + ':' + port + req.url);
+    //console.log('routing', req.method, 'request to ', ip + ':' + port + req.url);
     //console.log('req.params', req.body);
 
     let http = secure ? 'https://' : 'http://';
@@ -48,7 +49,7 @@ const proxyReroute = (ip, url, port, secure) => {
 
 }
 
-const proxyPipeReroute = (ip, url, port, secure) => {
+const proxyReroute = (ip, url, port, secure) => {
 
   return (req, res) => {
     let axiosRequest;
@@ -64,10 +65,20 @@ const proxyPipeReroute = (ip, url, port, secure) => {
       return
     }
 
-    console.log('routing', req.method, 'request to ', ip + ':' + port + req.url);
+   
 
-    req.pipe(axiosRequest(http + ip + ':' + port + req.url, req.body).pipe(res))
-    .catch((err) => {
+    let http = secure ? 'https://' : 'http://';
+    let portURL = port !== null ? ':' + port : '';
+
+     console.log('pipe routing', req.method, 'request to '+ portURL + req.url);
+
+    req.pipe(request(http + ip + portURL + req.url, req.body))
+    .on('error', (err) => {
+      console.log(err);
+      res.status(501);
+      res.end('proxy redirect Error');
+    }).pipe(res)
+    .on('error', (err) => {
       console.log(err);
       res.status(501);
       res.end('proxy redirect Error');
@@ -82,8 +93,8 @@ const proxyRouter = (redirects, redirectsMethod) => {
 
   let proxyHandler = proxyReroute;
 
-  if(redirectsMethod === 'pipeRerout') {
-    proxyHandler = proxyPipeReroute;
+  if(redirectsMethod === 'axios') {
+    proxyHandler = proxyAxiosReroute;
   }
   if(redirectsMethod === 'forward') {
     proxyHandler = proxyReroute; //TODO implement request forwarding method;
