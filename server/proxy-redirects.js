@@ -4,49 +4,54 @@
 const redirects = {
     reviews: {
       url: '/reviews/*/',
-      redirectIP: 'http://54.153.115.227/',
+      redirectIP: '54.153.115.227',
       redirectPort: null
     },
     reviewsPublic: {
       url: '/reviews/content/*',
-      redirectIP: 'http://54.153.115.227/',
+      redirectIP: '54.153.115.227',
       redirectPort: null
     },
-    // similarExperiencesLocation: {
-    //   url: '/similar/location/*',
-    //   redirectIP: '127.0.0.1',
-    //   redirectPort: '3003'
-    // },
-    // similarExperiencesIndex: {
-    //   url: '/similar/id/*',
-    //   redirectIP: '127.0.0.1',
-    //   redirectPort: '3003'
-    // },
-    // similarExperiencesContent: {
-    //   url: '/similar/content/*',
-    //   redirectIP: '127.0.0.1',
-    //   redirectPort: '3003'
-    // },
-    // upcomingAvailability: {
-    //   url: '/*/upcomingAvailability',
-    //   redirectIP: '127.0.0.1',
-    //   redirectPort: null
-    // },
+    similarExperiencesLocation: {
+      url: '/similar/location/*',
+      redirectIP: '54.241.103.135',
+      redirectPort: null
+    },
+    similarExperiencesIndex: {
+      url: '/similar/id/*',
+      redirectIP: '54.241.103.135',
+      redirectPort: null
+    },
+    similarExperiencesContent: {
+      url: '/similar/content/*',
+      redirectIP: '54.241.103.135',
+      redirectPort: null
+    },
+    upcomingAvailabilityContent: {
+      url: '/availability/content/*',
+      redirectIP: '52.9.177.164',
+      redirectPort: null
+    },
+    upcomingAvailabilityDates: {
+      url: '/experience/availableDate/*',
+      redirectIP: '52.9.177.164',
+      redirectPort: null
+    },
     // photoGallery: {
     //   url: '/*/photoGallery',
     //   redirectIP: '127.0.0.1',
     //   redirectPort: null
     // },
-    // detailsBundle: {
-    //   url: '/details/content/*',
-    //   redirectIP: '127.0.0.1',
-    //   redirectPort: '3005'
-    // },
-    // details: {
-    //   url: '/details/*',
-    //   redirectIP: '127.0.0.1',
-    //   redirectPort: '3005'
-    // }
+    detailsBundle: {
+      url: '/details/content/*',
+      redirectIP: '54.176.214.18',
+      redirectPort: null
+    },
+    details: {
+      url: '/details/*',
+      redirectIP: '54.176.214.18',
+      redirectPort: null
+    }
   }
 
 
